@@ -46,11 +46,6 @@ export const App: React.FunctionComponent = () => {
     const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
     const { name, avatar_url, bio } = apiResponse.data;
     
-    data.name = name;
-    data.avatarUrl = avatar_url;
-    data.bio = bio;
-    data.githubUsername = github_username;
-    
     sp.web.lists.getByTitle("Devs").items.add({
       githubUsername: github_username,
       name: name,
@@ -61,7 +56,7 @@ export const App: React.FunctionComponent = () => {
       longitude: longitude
     }).then(i => {          
         console.log(i);
-        setDevs([...devs, data]);
+        setDevs([...devs, i.data]);
     },
     (err) => {
       console.log(err);            
