@@ -1,26 +1,61 @@
-## dev-radar
+# Dev-Radar for SharePoint Online
 
-This is where you include your WebPart documentation.
+## Summary
 
-### Building the code
+One way to find devs from the same stack near you.
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
+## Screen 
+
+![react-dev-radar](dev-radar.png)
+
+## Used SharePoint Framework Version 
+
+![drop](https://img.shields.io/badge/version-1.8.2-green.svg)
+
+## Applies to
+
+* [SharePoint Online](https:/dev.office.com/sharepoint)
+
+
+## Solution
+The web part Use PnPjs library and Axios
+
+Create a list Devs with fields
+```
+Field               Type
+---------------------------
+name                single line 
+githubUsername      single line 
+techs               single line 
+avatarUrl           single line 
+bio                 multiline 
+latitude            single line 
+longitude           single line 
 ```
 
-This package produces the following:
+Solution|Author(s)
+--------|---------
+Dev Radar  Web Part|Saulo Oliveira
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+## Version history
 
-### Build options
+Version|Date|Comments
+-------|----|--------
+1.0.0|March 01, 2020|Initial release
 
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+
+## Disclaimer
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+## Minimal Path to Awesome
+
+- Clone this repository
+- in the command line run:
+  - `npm install`
+  - `gulp build`
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
+  - `Add to AppCatalog and deploy`
+

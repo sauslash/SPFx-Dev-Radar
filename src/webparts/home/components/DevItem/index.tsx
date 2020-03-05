@@ -16,7 +16,7 @@ function DevItem(props) {
                 </div>
             </header>
             <p>{dev.bio}</p>
-            <a href={`https://github.com/${dev.githubUsername}`}>Acessar perfil no GitHub</a>
+            <a href={`https://github.com/${dev.githubUsername}`}>Access GitHub profile</a>
         </li>
     );
 }

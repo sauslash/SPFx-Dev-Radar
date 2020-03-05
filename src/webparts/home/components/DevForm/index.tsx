@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { sp } from '@pnp/sp';
 
 import './styles.css';
 
@@ -8,13 +6,12 @@ function DevForm(props) {
 
     const { onSubmit } = props;
 
-    const [latitude, setLatitude] = useState('');
-    const [longitude, setLogintude] = useState('');
-    const [github_username, setGitHubUserName] = useState('');
-    const [techs, setTechs] = useState('');
-
-    //o parametro array no final indica que vai executar apenas uma vez
-    useEffect(() => {
+    const [latitude, setLatitude] = React.useState('');
+    const [longitude, setLogintude] = React.useState('');
+    const [github_username, setGitHubUserName] = React.useState('');
+    const [techs, setTechs] = React.useState('');
+    
+    React.useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
@@ -47,14 +44,14 @@ function DevForm(props) {
     return (
         <form onSubmit={handleAddDev}>
             <div className="input-block">
-                <label htmlFor="github_username">Usuário do GitHub</label>
+                <label htmlFor="github_username">GitHub UserName</label>
                 <input name="github_username" id="github_username" required
                     value={github_username}
                     onChange={e => setGitHubUserName(e.target.value)} />
             </div>
 
             <div className="input-block">
-                <label htmlFor="techs">Tecnologias</label>
+                <label htmlFor="techs">Technologies</label>
                 <input name="techs" id="techs" required
                     value={techs}
                     onChange={e => setTechs(e.target.value)} />
@@ -75,7 +72,7 @@ function DevForm(props) {
                 </div>
             </div>
 
-            <button type="submit">Salvar</button>
+            <button type="submit">Save</button>
         </form>
     );
 }

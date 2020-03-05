@@ -1,9 +1,3 @@
-//3 conceitos principais do react
-//Componente - Bloco isolado de html, css e js, o qual não interfere no restante da aplicação
-//Propriedades - Informações que o componente pai passa para o componente filho
-//Estado - Informações mantidas pelo componente (lembrar imutabilidade)
-
-// <> - conceito do fragment, para renderizar varios componentes dentro do return sem usar uma div por exemplo
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -67,7 +61,7 @@ export const App: React.FunctionComponent = () => {
   return (
     <div id="app">
       <aside>
-        <strong>Cadastrar</strong>
+        <strong>Register</strong>
         <DevForm onSubmit={handleAddDev} />
       </aside>
       <main>
